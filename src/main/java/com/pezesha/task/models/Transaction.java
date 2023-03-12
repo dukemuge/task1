@@ -29,4 +29,7 @@ public class Transaction {
     private LocalDateTime initiationDate;
 
     private LocalDateTime completionDate;
+
+    @ManyToOne
+    private Account account;
 }

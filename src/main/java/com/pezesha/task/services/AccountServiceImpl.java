@@ -20,10 +20,25 @@ public class AccountServiceImpl  implements AccountService{
     @Autowired
     ModelMapper modelMapper;
 
+    /**
+     * method to convert account payloads to Account model using ModelMapper library.
+     *
+     * @param accountDto - represents the AccountDto of the Account.
+     * @return Returns the Account Entity.
+     */
     private Account dtoToAccount(AccountDto accountDto){
         Account account = this.modelMapper.map(accountDto,Account.class);
         return  account;
     }
+
+
+
+    /**
+     * method to convert Account Entity to AccountDto model using ModelMapper library.
+     *
+     * @param account - represents Account Entity to be converted.
+     * @return Returns the Account Entity.
+     */
 
     public AccountDto accountToDto(Account account){
         AccountDto accountDto = this.modelMapper.map(account, AccountDto.class);
